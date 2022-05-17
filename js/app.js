@@ -7,15 +7,10 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 function randAvgCust(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function multiply(a, b) {
-  return (a * b);
-}
 
-// Objects
 
 let seattle = {
   name: 'Seattle',
-
   minCust: 23,
   maxCust: 65,
   avgCookSales: 6.3,
@@ -28,6 +23,7 @@ let seattle = {
       this.cookieArray.push(NumCookSold);
     }
   },
+
   render: function () {
     let articleElem = document.createElement('article');
     salesSection.appendChild(articleElem);
@@ -49,9 +45,9 @@ let seattle = {
     ulElem.appendChild(liElem);
   },
 };
+
 let tokyo = {
   name: 'Tokyo',
-
   minCust: 3,
   maxCust: 24,
   avgCookSales: 1.2,
@@ -64,6 +60,7 @@ let tokyo = {
       this.cookieArray.push(NumCookSold);
     }
   },
+
   render: function () {
     let articleElem = document.createElement('article');
     salesSection.appendChild(articleElem);
@@ -85,9 +82,9 @@ let tokyo = {
     ulElem.appendChild(liElem);
   },
 };
+
 let dubai = {
   name: 'Dubai',
-
   minCust: 11,
   maxCust: 38,
   avgCookSales: 3.7,
@@ -124,7 +121,6 @@ let dubai = {
 
 let paris = {
   name: 'Paris',
-
   minCust: 20,
   maxCust: 38,
   avgCookSales: 2.3,
@@ -137,6 +133,7 @@ let paris = {
       this.cookieArray.push(NumCookSold);
     }
   },
+
   render: function () {
     let articleElem = document.createElement('article');
     salesSection.appendChild(articleElem);
@@ -161,7 +158,6 @@ let paris = {
 };
 let lima = {
   name: 'Lima',
-
   minCust: 2,
   maxCust: 16,
   avgCookSales: 4.6,
@@ -207,20 +203,3 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
-
-// for loop that multiplies 'rand avg cust' by 'avgCook' for every value in the array 
-
-
-//     avgCookSales = ((this.randAvgCust)*(this.avgCook));
-//     return `At ${ openhours[0] }, Seattle\'s sales were ${avgCookSales}`
-//   }
-//   console.log(seattle)
-// };
-
-// DOM Manipulation
-
-
-  //store min/max cust + avg cook in objects
-  // rand # of cust per hour
-  // Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
-  // store each location in a different array
