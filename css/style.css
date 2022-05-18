@@ -1,0 +1,32 @@
+
+body{
+  background-color: salmon;
+}
+
+table{
+  border-style: solid;
+  border-color: black;
+  margin: auto;
+  justify-content: center;
+}
+
+th{
+  border-style: solid;
+  border-color: black;
+}
+
+
+
+tr{
+  border-style: solid;
+  border-color: black;
+}
+
+td{
+  font-family: 'Koulen', cursive;
+  text-align: center;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-color: black;
+  margin: 0px;
+}
