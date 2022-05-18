@@ -1,24 +1,50 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 body{
-  background-color: salmon;
-}
-header{
-  <img src ='img/salmon.png'>
+  background-color: rgb(1, 1, 37);
 }
 
+.container {
+ position: relative;
+ text-align: center;
+}
+
+.tl {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  text-align: center;
+  font-size: xxx-large;
+  color: rgb(25, 85, 28);
+  text-shadow: -3px -3px 1px black;
+  
+}
+
+section img{
+  align-content: center;
+  display: inline;
+  height: 100px;
+}
+nav {
+  float: right;
+}
+h2 {
+  font-size: xx-large;
+  color: salmon;
+}
 table{
   border-style: solid;
   border-color: black;
   margin: auto;
   justify-content: center;
+  color: salmon;
+  spa
 }
 
 th{
   border-style: solid;
   border-color: black;
 }
-
-
 
 tr{
   border-style: solid;
