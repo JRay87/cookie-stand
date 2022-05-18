@@ -2,6 +2,9 @@
 body{
   background-color: salmon;
 }
+header{
+  <img src ='img/salmon.png'>
+}
 
 table{
   border-style: solid;

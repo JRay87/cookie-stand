@@ -10,6 +10,9 @@ function randCust(min, max) {
 }
 
 let storeData = [];
+// let hourTotals = [];
+
+
 
 function Stores(name, minCust, maxCust, avgCookSales) {
   this.name = name;
@@ -21,6 +24,7 @@ function Stores(name, minCust, maxCust, avgCookSales) {
   this.cookieArray = [];
   this.avgCookSold();
   storeData.push(this);
+  // hourTotals.push(this);
 }
 
 Stores.prototype.randCust = function () {
@@ -32,6 +36,7 @@ Stores.prototype.avgCookSold = function () {
     let numCookSold = Math.ceil(randCust(this.minCust, this.maxCust) * this.avgCookSales);
     this.totalCookies = this.totalCookies + numCookSold;
     this.cookieArray.push(numCookSold);
+    // return this.cookieArray;
   }
 };
 
@@ -52,10 +57,11 @@ Stores.prototype.render = function () {
 };
 
 function renderAllStoreData() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < storeData.length; i++) {
     storeData[i].render();
   }
 }
+
 function setTableHeader() {
   let newRow = document.createElement('tr');
   salesSection.appendChild(newRow);
@@ -78,11 +84,11 @@ function setTableFooter() {
   let footElem = document.createElement('tf');
   newRow.appendChild(footElem);
   footElem.textContent = 'Hourly Totals:';
-  for (let i = 0; i < storeData.length; i++);
-  let hourlyTotal = document.createElement('tf');
-  newRow.appendChild(hourlyTotal);
-  hourlyTotal.textContent = `${storeData[i]}`;
-
+  for (let i = 0; i < storeData.length; i++){
+    let hourlyTotal = document.createElement('tf');
+    newRow.appendChild(hourlyTotal);
+    hourlyTotal.textContent = (parseInt(`${hourTotals[i]}`) ,parseFloat(`${hourTotals[i]}`));
+  }
 }
 
 new Stores('Seattle', 23, 65, 6.3);
@@ -95,6 +101,5 @@ console.log(storeData);
 renderAllStoreData();
 setTableFooter();
 
-console.log(storeData.length);
 
 
