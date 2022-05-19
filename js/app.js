@@ -4,14 +4,17 @@ let salesSection = document.getElementById('table');
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 console.log(salesSection);
 
+
 // got from mdn web docs
 function randCust(min, max) {
   return Math.ceil(Math.random() * (max - min + 1) + min);
 }
 let storeData = [];
+// let cookieArray = [];
+
 // let hourTotals = []
-function Stores(name, minCust, maxCust, avgCookSales) {
-  this.name = name;
+function Stores(storeLocation, minCust, maxCust, avgCookSales) {
+  this.storeLocation = storeLocation;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookSales = avgCookSales;
@@ -39,7 +42,7 @@ Stores.prototype.render = function () {
   let trOneElem = document.createElement('tr');
   salesSection.appendChild(trOneElem);
   let dataCell = document.createElement('td');
-  dataCell.textContent = this.name;
+  dataCell.textContent = this.storeLocation;
   trOneElem.appendChild(dataCell);
   for (let i = 0; i < hours.length; i++) {
     let dataCell = document.createElement('td');
@@ -74,23 +77,23 @@ function setTableHeader() {
   thTotal.textContent = 'Daily Total';
 }
 
-function setTableFooter() {
-  let newRow = document.createElement('tr');
-  salesSection.appendChild(newRow);
-  let footElem = document.createElement('tfoot');
-  newRow.appendChild(footElem);
-  footElem.textContent = 'Hourly Totals:';
+// function setTableFooter() {
+//   let newRow = document.createElement('tr');
+//   salesSection.appendChild(newRow);
+//   let footElem = document.createElement('tfoot');
+//   newRow.appendChild(footElem);
+//   footElem.textContent = 'Hourly Totals:';
 
-  for (let i = 0; i < hours.length; i++){
-    let hTotal = 0;
-    for (let j = 0; j < storeData.length; i++){
-      hTotal += (storeData[j].hours[i]);
-      let dataCell = document.createElement('tf');
-      dataCell.textContent = `${hTotal}`;
-      newRow.appendChild(dataCell);
-    }
-  }
-}
+//   for (let i = 0; i < hours.length; i++){
+//     let hTotal = 0;
+//     for (let j = 0; j < cookieArray.length; i++){
+//       hTotal += (cookieArray[j].hours[i]);
+//       let dataCell = document.createElement('td');
+//       dataCell.textContent = `${hTotal}`;
+//       newRow.appendChild(dataCell);
+//     }
+//   }
+// }
 
 new Stores('Seattle', 23, 65, 6.3);
 new Stores('Tokyo', 3, 24, 1.2);
@@ -100,5 +103,6 @@ new Stores('Lima', 2, 16, 4.6);
 setTableHeader();
 console.log(storeData);
 renderAllStoreData();
-setTableFooter();
+// setTableFooter();
+
 
