@@ -3,7 +3,7 @@
 let salesSection = document.getElementById('table');
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 console.log(salesSection);
-
+let cookForm = document.getElementById('cookForm');
 
 // got from mdn web docs
 function randCust(min, max) {
@@ -105,4 +105,17 @@ console.log(storeData);
 renderAllStoreData();
 // setTableFooter();
 
+function handleSubmit(event){
+  event.preventDefault();
 
+  let storeLocation = event.target.storeLocation.value;
+  let minCust = +event.target.minCust.value;
+  let maxCust = +event.target.maxCust.value;
+  let avgCookSales = +event.target.avgCookSales.value;
+
+  let newStores = new Stores(storeLocation, minCust, maxCust, avgCookSales);
+
+  newStores.render();
+}
+
+cookForm.addEventListener('submit', handleSubmit);
