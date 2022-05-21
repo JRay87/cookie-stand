@@ -24,6 +24,7 @@ section {
   display: flex;
   padding-left: 50px;
   padding-right: 50px;
+  padding-bottom: 40px;
 }
 
 p {
