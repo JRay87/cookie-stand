@@ -117,6 +117,15 @@ margin-left: 100px;
   margin-left: 50px;
 }
 
+p > a {
+  text-decoration: none;
+  color: rgb(154, 118, 68);
+}
+/* got the . and :visited from stack */
+p > a:visited {
+  color: rgb(154, 118, 68);
+}
+
 #merchTwo {
   float: right;
   margin-left: 50px;
