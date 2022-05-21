@@ -21,7 +21,6 @@ function Stores(storeLocation, minCust, maxCust, avgCookSales) {
   this.totalCookies = 0;
   this.NumCookSold = 0;
   this.cookieArray = [];
-  this.avgCookSold();
   storeData.push(this);
   // hourTotals.push(this);
 }
@@ -39,6 +38,7 @@ Stores.prototype.avgCookSold = function () {
 };
 
 Stores.prototype.render = function () {
+  this.avgCookSold();
   let trOneElem = document.createElement('tr');
   salesSection.appendChild(trOneElem);
   let dataCell = document.createElement('td');
@@ -77,23 +77,31 @@ function setTableHeader() {
   thTotal.textContent = 'Daily Total';
 }
 
-// function setTableFooter() {
-//   let newRow = document.createElement('tr');
-//   salesSection.appendChild(newRow);
-//   let footElem = document.createElement('tfoot');
-//   newRow.appendChild(footElem);
-//   footElem.textContent = 'Hourly Totals:';
+function setTableFooter() {
+  let footElem = document.createElement('tfoot');
+  salesSection.appendChild(footElem);
+  let newRow = document.createElement('tr');
+  footElem.appendChild(newRow);
 
-//   for (let i = 0; i < hours.length; i++){
-//     let hTotal = 0;
-//     for (let j = 0; j < cookieArray.length; i++){
-//       hTotal += (cookieArray[j].hours[i]);
-//       let dataCell = document.createElement('td');
-//       dataCell.textContent = `${hTotal}`;
-//       newRow.appendChild(dataCell);
-//     }
-//   }
-// }
+  let tdElem = document.createElement('td');
+  tdElem.textContent = 'Totals';
+  newRow.appendChild(tdElem);
+
+  let grandTotal = 0;
+  for (let i = 0; i < hours.length; i++) {
+    let hTotal = 0;
+    for (let j = 0; j < storeData.length; j++) {
+      hTotal += (storeData[j].cookieArray[i]);
+      grandTotal += storeData[j].cookieArray[i];
+    }
+    let dataCell = document.createElement('td');
+    dataCell.textContent = `${hTotal}`;
+    newRow.appendChild(dataCell);
+  }
+  let totalCell = document.createElement('td');
+  totalCell.textContent = grandTotal;
+  newRow.appendChild(totalCell);
+}
 
 new Stores('Seattle', 23, 65, 6.3);
 new Stores('Tokyo', 3, 24, 1.2);
@@ -103,9 +111,10 @@ new Stores('Lima', 2, 16, 4.6);
 setTableHeader();
 console.log(storeData);
 renderAllStoreData();
-// setTableFooter();
+setTableFooter();
 
-function handleSubmit(event){
+
+function handleSubmit(event) {
   event.preventDefault();
 
   let storeLocation = event.target.storeLocation.value;
@@ -115,7 +124,8 @@ function handleSubmit(event){
 
   let newStores = new Stores(storeLocation, minCust, maxCust, avgCookSales);
 
+  document.querySelector('tFoot').remove();
   newStores.render();
+  setTableFooter();
 }
-
 cookForm.addEventListener('submit', handleSubmit);

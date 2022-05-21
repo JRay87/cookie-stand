@@ -1,32 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 body{
-  background-color: salmon;
-}
+  background-color: #1b373b;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+  }
+
+  .tl {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    text-align: center;
+    font-size: xxx-large;
+    color: rgb(25, 85, 28);
+    text-shadow: -3px -3px 1px black;
+  }
+
+  nav{
+    border-style: solid;
+    border: rgb(184, 118, 96);
+    background-color: rgb(184, 118, 96);
+  }
+  nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 50px;
+    font-size: xx-large;
+    
+  }
 
 table{
+  margin-top: 50px;
   border-style: solid;
-  border-color: black;
-  margin: auto;
+  border-color:rgb(184, 118, 96);
   justify-content: center;
-  color: black;
+  color: rgba(175, 77, 66, 0.863);
+  min-height:fit-content;
+  margin-left: 300px;
+
 }
 
 th{
   border-style: solid;
-  border-color: black;
+  border-color: rgb(184, 118, 96);
   align-content: center;
+  min-width: 50px;
+  font-size: larger;
+  text-decoration: underline;
 }
 
 tr{
   border-style: solid;
-  border-color: black;
 }
 
 td{
   font-family: 'Koulen', cursive;
+  font-size: larger;
   text-align: center;
   border-left: 2px solid;
   border-bottom: 2px solid;
-  border-color: black;
+  border-color: rgb(25, 85, 28);
   margin: 0px;
+}
+
+form {
+  margin-top: 50px;
+  background-color: rgba(102, 67, 26, 0.195);
+  border-style: solid;
+  color: rgba(250, 128, 114, 0.863);
+  font-size: x-large;
 }
