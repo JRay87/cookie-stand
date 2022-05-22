@@ -35,7 +35,8 @@ p {
   position: relative;
   text-justify: bottom;
   text-indent: 40px;
-  color: rgb(154, 118, 68);
+  color: rgb(188, 166, 136);
+  text-shadow: -2px -2px 1px black;
 }
 
 /* container and .tl to anchor text in center on fish from w3 */
@@ -120,11 +121,13 @@ margin-left: 100px;
 
 p > a {
   text-decoration: none;
-  color: rgb(154, 118, 68);
+  color: rgb(188, 166, 136);
+  text-shadow: -2px -2px 1px black;
 }
 /* got the . and :visited from stack */
 p > a:visited {
-  color: rgb(154, 118, 68);
+  color: rgb(188, 166, 136);
+  text-shadow: -2px -2px 1px black;
 }
 
 #merchTwo {
